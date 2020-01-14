@@ -10,12 +10,14 @@
 using namespace cv;
 using namespace std;
 
+//#define __SHOW_ORIGINAL_IMG
 //#define __CHECK_OPENCV
 
 //#define __CHECK_AVERAGE
 //#define __CHECK_GAUSSIAN
 //#define __CHECK_SOBEL
 //#define __CHECK_LAPLACIAN
+#define __CHECK_GEOMETRY_CONVERTION
 
 int main()
 {
@@ -25,8 +27,10 @@ int main()
 		cout << "Image Data is empty!" << endl;
 		return 0;
 	}
-	imshow("read data", data);
 
+#if __SHOW_ORIGINAL_IMG 1
+	imshow("original img", data);
+#endif
 
 #if __CHECK_AVERAGE 1
 	Mat ave;
@@ -65,9 +69,28 @@ int main()
 	imshow("opencv canny", canny);
 #endif
 
-	Mat rota;
-	rota = myAffinRotation(data, 120);
+#if __CHECK_GEOMETRY_CONVERTION 1
+	Mat resize_data;
+	resize_data = myResize(data, 0.5, 0.5);
+	imshow("my resize", resize_data);
+
+	Mat rota = resize_data.clone();
+	rota = myRotation(rota, 45);
 	imshow("rotaition out", rota);
+
+	Mat conv_matrix;
+	conv_matrix = Mat::zeros(Size(2, 2), CV_32F);
+
+	conv_matrix.at<float>(0, 0) = 0.5 * cos(45 * 3.14 / 180);
+	conv_matrix.at<float>(0, 1) = 0.5 * -sin(45 * 3.14 / 180);
+	conv_matrix.at<float>(1, 0) = 0.5 * sin(45 * 3.14 / 180);
+	conv_matrix.at<float>(1, 1) = 0.5 * cos(45 * 3.14 / 180);
+
+	cout << conv_matrix << endl;
+	Mat affin_data;
+	affin_data = myAffin(data, conv_matrix, 0.0f, 0.0f);
+	imshow("affin convertion", affin_data);
+#endif
 
 	waitKey();
 	return 0;
