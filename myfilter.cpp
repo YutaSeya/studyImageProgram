@@ -1,5 +1,7 @@
 #include "myfilter.h"
 
+#include <cmath>
+
 using namespace cv;
 using namespace std;
 

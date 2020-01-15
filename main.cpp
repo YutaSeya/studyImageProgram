@@ -10,24 +10,34 @@
 using namespace cv;
 using namespace std;
 
-//#define __SHOW_ORIGINAL_IMG
+#define __SHOW_ORIGINAL_IMG
 //#define __CHECK_OPENCV
 
-//#define __CHECK_AVERAGE
+///#define __CHECK_AVERAGE
 //#define __CHECK_GAUSSIAN
 //#define __CHECK_SOBEL
 //#define __CHECK_LAPLACIAN
-#define __CHECK_GEOMETRY_CONVERTION
+//#define __CHECK_GEOMETRY_CONVERTION
+
+void testCases(Mat &data);
 
 int main()
 {
 	Mat data;
-	data = imread("Image/3.jpg");
+	data = imread("Image/2.png");
 	if (data.empty()) {
 		cout << "Image Data is empty!" << endl;
 		return 0;
 	}
 
+	testCases(data);
+
+	waitKey();
+	return 0;
+}
+
+void testCases(Mat &data)
+{
 #if __SHOW_ORIGINAL_IMG 1
 	imshow("original img", data);
 #endif
@@ -91,7 +101,4 @@ int main()
 	affin_data = myAffin(data, conv_matrix, 0.0f, 0.0f);
 	imshow("affin convertion", affin_data);
 #endif
-
-	waitKey();
-	return 0;
 }

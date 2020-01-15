@@ -4,8 +4,6 @@
 
 #include <iostream>
 
-#include <cmath>
-
 #define _DEBUG
 
 cv::Mat myAverageFilter(cv::Mat data, cv::Size ksize);

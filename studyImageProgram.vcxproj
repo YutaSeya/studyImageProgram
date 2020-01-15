@@ -144,10 +144,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAffin.cpp" />
     <ClCompile Include="myfilter.cpp" />
+    <ClCompile Include="myHistgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myAffin.h" />
     <ClInclude Include="myfilter.h" />
+    <ClInclude Include="myHistgram.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
