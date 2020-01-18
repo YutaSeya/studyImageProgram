@@ -2,13 +2,13 @@
 
 #include <iostream>
 
-#include <cmath>
-
 #include "myfilter.h"
 #include "myAffin.h"
+#include "myHistgram.h"
 
 using namespace cv;
 using namespace std;
+
 
 #define __SHOW_ORIGINAL_IMG
 //#define __CHECK_OPENCV
@@ -24,13 +24,29 @@ void testCases(Mat &data);
 int main()
 {
 	Mat data;
-	data = imread("Image/2.png");
+	data = imread("Image/3.jpg");
 	if (data.empty()) {
 		cout << "Image Data is empty!" << endl;
 		return 0;
 	}
 
 	testCases(data);
+
+	imshow("color histgram" ,myPaintHistgram(myCalcHistogram(data)));
+
+	Mat tonebgr;
+
+	tonebgr = myToneCurve(data, -1.0f, 0, 255);
+	imshow("bgr negaposi", tonebgr);
+	imshow("bgr negaposi histgram", myPaintHistgram(myCalcHistogram(tonebgr)));
+
+	vector<int> lut(256);
+
+	for (int i = 0; i < 256; i++) {
+		lut[i] = 255 - i;
+	}
+
+	imshow("my lut", myConvertionLut(data, lut));
 
 	waitKey();
 	return 0;
