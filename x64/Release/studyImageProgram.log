@@ -1,32 +1,14 @@
-﻿  myHistgram.cpp
+﻿  main.cpp
 C:\opencv349\install\include\opencv2\calib3d.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(38,65): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(39,69): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(40,61): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(72,65): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(99,65): warning C4244: '引数': 'float' から '_Tp' への変換です。データが失われる可能性があります。
-          with
-          [
-              _Tp=int
-          ]
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(100,65): warning C4244: '引数': 'float' から '_Tp' への変換です。データが失われる可能性があります。
-          with
-          [
-              _Tp=int
-          ]
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(101,65): warning C4244: '引数': 'float' から '_Tp' への変換です。データが失われる可能性があります。
-          with
-          [
-              _Tp=int
-          ]
-C:\Users\alcne\Desktop\studyImageProgram\myHistgram.cpp(107,65): warning C4244: '引数': 'float' から '_Tp' への変換です。データが失われる可能性があります。
-          with
-          [
-              _Tp=int
-          ]
+C:\Users\alcne\Desktop\studyImageProgram\main.cpp(57,21): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
+C:\Users\alcne\Desktop\studyImageProgram\main.cpp(63,22): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
+C:\Users\alcne\Desktop\studyImageProgram\main.cpp(69,19): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
+C:\Users\alcne\Desktop\studyImageProgram\main.cpp(77,23): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
+C:\Users\alcne\Desktop\studyImageProgram\main.cpp(88,20): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
+C:\Users\alcne\Desktop\studyImageProgram\main.cpp(94,33): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
   コード生成しています。
-  2 of 361 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+  1 of 360 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   studyImageProgram.vcxproj -> C:\Users\alcne\Desktop\studyImageProgram\x64\Release\studyImageProgram.exe

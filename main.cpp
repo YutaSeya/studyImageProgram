@@ -34,19 +34,15 @@ int main()
 
 	imshow("color histgram" ,myPaintHistgram(myCalcHistogram(data)));
 
-	Mat tonebgr;
-
-	tonebgr = myToneCurve(data, -1.0f, 0, 255);
-	imshow("bgr negaposi", tonebgr);
-	imshow("bgr negaposi histgram", myPaintHistgram(myCalcHistogram(tonebgr)));
-
 	vector<int> lut(256);
 
 	for (int i = 0; i < 256; i++) {
-		lut[i] = 255 - i;
+		float check = 255 * powf(((float)i / 255.0f), 1.0f/2.0f);
+		lut[i] = (int)check;
 	}
 
 	imshow("my lut", myConvertionLut(data, lut));
+	imshow("color histgram", myPaintHistgram(myCalcHistogram(myConvertionLut(data, lut))));
 
 	waitKey();
 	return 0;
